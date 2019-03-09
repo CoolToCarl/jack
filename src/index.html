@@ -28,15 +28,18 @@
     </div>
        <!-- 菜单栏  结束 -->
 
-       <!-- 商品列表  开始 -->
-
        
+       <!-- 商品列表  开始 -->
+       <div class="pyg_goodslist">
+          <!-- 该部分模板引擎动态渲染 -->
+       </div>
        <!-- 商品列表  结束 -->
   </div>
   @@include("footer.html")
 </body>
 
 </html>
+<!-- 获取轮播图数据   开始 -->
 <script type="text/html" id="swiperTpl">
   <div class="mui-slider" >
     <div class="mui-slider-group mui-slider-loop" id="viewImg">
@@ -56,8 +59,30 @@
      </div>
   </div>
 </script>
+<!-- 获取轮播图数据  结束 -->
 
-
+<!-- 获取商品列表数据   开始 -->
+<script type="text/html" id="listTpl">
+  {{each arr item1 value1 }}
+  <div class="goodslist">
+    <div class="goodslist_title">
+      <img src="{{item1.group_img}}" alt="">
+    </div>
+    <ul class="goodslist_content">
+      {{each item1.goods item2 value2}}
+      <li>
+        <a href="javascript:;">
+          <img src="{{item2.goods_big_logo}}" alt="">
+          <div class="goods_name">{{item2.goods_name}}</div>
+          <div class="goods_price">¥{{item2.goods_price}}</div>
+        </a>
+        <a href="javascript:;" class="goods_similar mui-btn mui-btn-royal mui-btn-outlined ">找相似</a>
+      </li>
+      {{/each}}
+    </ul>
+</div>
+{{/each}}
+</script>
 
 
 <script src="./lib/arttemplate/template-web.js"></script>

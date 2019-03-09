@@ -4,7 +4,9 @@ $(function () {
   // 获取首页轮播图的数据
   swiperdata(); // 获取分页导航数据
 
-  catitems();
+  catitems(); // 获取商品数据列表
+
+  goodslist();
 });
 
 function init() {
@@ -59,6 +61,21 @@ function catitems() {
       $(".pyg_cates").html(html);
     } else {
       console.log("请求失败", result);
+    }
+  });
+}
+
+function goodslist() {
+  $.get("http://api.pyg.ak48.xyz/api/public/v1/home/goodslist", function (result) {
+    if (result.meta.status == 200) {
+      // console.log(result);
+      var data = result.data; //  console.log( data[0].group_img);
+
+      var html = template("listTpl", {
+        arr: data
+      }); // console.log(html);
+
+      $(".pyg_goodslist").html(html);
     }
   });
 }

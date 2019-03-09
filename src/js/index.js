@@ -2,7 +2,10 @@ $(function () {
   // 获取首页轮播图的数据
   swiperdata();
   // 获取分页导航数据
-  catitems()
+  catitems();
+  // 获取商品数据列表
+  goodslist();
+
 })
 
 function init() {
@@ -43,12 +46,12 @@ function catitems() {
   $.get("http://api.pyg.ak48.xyz/api/public/v1/home/catitems", (result) => {
 
     if (result.meta.status == 200) {
-     
+
       let data = result.data;
       let html = "";
-      for (let i = 0; i < data.length; i++){
+      for (let i = 0; i < data.length; i++) {
         // console.log(data[i]);
-        
+
         let tmpHtml = `
         <a href="javascript:;"><img src="${data[i].image_src}" alt=""/></a>
         `
@@ -58,10 +61,26 @@ function catitems() {
       // 把分类的标签 插入到  容器中
       $(".pyg_cates").html(html);
 
-     
+
     } else {
       console.log("请求失败", result);
     }
   })
 
+}
+
+function goodslist() {
+  $.get("http://api.pyg.ak48.xyz/api/public/v1/home/goodslist", (result) => {
+
+    if (result.meta.status == 200) {
+      // console.log(result);
+      let data = result.data;
+    //  console.log( data[0].group_img);
+     
+      let html = template("listTpl", { arr: data });
+      // console.log(html);
+      $(".pyg_goodslist").html(html);
+    }
+
+  })
 }

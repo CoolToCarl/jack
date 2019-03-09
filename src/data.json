@@ -1,9 +1,0 @@
-{
- "data": [{
-  "name": "分类",
-  "image_src": "https://lg-igjc8p1o-1256763078.cos.ap-shanghai.myqcloud.com/upload/icon_index_nav_4@2x.png",
-  "open_type": "switchTab",
-  "navigator_url": "/pages/category"
- }]
-
-}
