@@ -1,0 +1,14 @@
+html,
+body,
+.pyg_view {
+  height: 100%;
+  background-color: #333;
+}
+body {
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+.pyg_view {
+  overflow: scroll;
+  background-color: #eee;
+}
