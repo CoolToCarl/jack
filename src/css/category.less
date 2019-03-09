@@ -1,0 +1,32 @@
+@import "./commot.less";
+
+.pyg_view {
+ display: flex;
+ overflow: hidden;
+
+ .left {
+  overflow: scroll;
+  width: 80px;
+  background-color: #ccc;
+
+  ul {
+   >li {
+    height: 40px;
+    font-size: 13px;
+    text-align: center;
+    line-height: 40px;
+    background-color: #efeff4;
+   }
+   >.active{
+    border-left: 4px solid #ff008c;
+    background-color: #fff;
+   }
+  }
+ }
+
+ .right {
+  overflow: scroll;
+  flex: 1;
+  background-color: #0f0;
+ }
+}
