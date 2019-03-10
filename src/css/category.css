@@ -73,5 +73,27 @@ a {
 .pyg_view .right {
   overflow: scroll;
   flex: 1;
-  background-color: #0f0;
+  background-color: #fff;
+}
+.pyg_view .right > .rigth_item > .item_title {
+  display: flex;
+  height: 40px;
+  font-size: 13px;
+  padding-left: 10px;
+  color: #0094ff;
+  align-items: center;
+}
+.pyg_view .right > .rigth_item > .item_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.pyg_view .right > .rigth_item > .item_list > li {
+  width: 33.33%;
+  text-align: center;
+}
+.pyg_view .right > .rigth_item > .item_list > li > a > img {
+  width: 100%;
+}
+.pyg_view .right > .rigth_item > .item_list > li > a .item_name {
+  font-size: 12px;
 }

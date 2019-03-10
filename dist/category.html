@@ -18,18 +18,14 @@
 </div>
 </header>
   <div class="pyg_view">
-     <div class="left">
-      <ul>
-        <li class="active">前记录代码</li>
-        <li>前记录代码</li>
-        <li>前记录代码</li>
-        <li>前记录代码</li>
-        <li>前记录代码</li>
-        <li>前记录代码</li>
+    <div class="left">
+      <ul class="left_menu">
+        <!-- 模板生成 -->
       </ul>
-     </div>
-     <div class="right">右
-     </div>
+    </div>
+    <div class="right">
+      <!-- 模板生成 -->
+    </div>
   </div>
   <footer class="pyg_footer">
  <a href="/">
@@ -56,7 +52,25 @@
 
 </html>
 
+<script type="text/html" id="leftdata">
+  {{each arr item index}}
+  <div class="rigth_item">
+      <div class="item_title">{{item.cat_name}}</div>
 
+      <ul class="item_list">
+
+        {{each item.children item2 index2}}
+        <li>
+          <a href="javascript:;">
+            <img src="http://api.pyg.ak48.xyz/{{item2.cat_icon}}" alt="">
+            <span class="item_name">{{item2.cat_name}}</span>
+          </a>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/each}}
+  </script>
 
 
 <script src="./lib/arttemplate/template-web.js"></script>

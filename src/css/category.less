@@ -27,6 +27,32 @@
  .right {
   overflow: scroll;
   flex: 1;
-  background-color: #0f0;
+  background-color: #fff;
+  >.rigth_item{
+   >.item_title{
+    display: flex;
+    height: 40px;
+    font-size: 13px;
+    padding-left: 10px;
+    color: #0094ff;
+    align-items: center;
+   }
+   >.item_list{
+    display: flex;
+    flex-wrap: wrap;
+    >li{
+     width: 33.33%;
+     text-align: center;
+     >a{
+      >img{
+       width: 100%;
+      }
+      .item_name{
+       font-size: 12px;
+      }
+     }
+    }
+   }
+  }
  }
 }
