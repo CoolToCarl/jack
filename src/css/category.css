@@ -55,7 +55,6 @@ a {
   overflow: hidden;
 }
 .pyg_view .left {
-  overflow: scroll;
   width: 80px;
   background-color: #ccc;
 }
@@ -71,11 +70,11 @@ a {
   background-color: #fff;
 }
 .pyg_view .right {
-  overflow: scroll;
+  overflow: hidden;
   flex: 1;
   background-color: #fff;
 }
-.pyg_view .right > .rigth_item > .item_title {
+.pyg_view .right .rigth_item > .item_title {
   display: flex;
   height: 40px;
   font-size: 13px;
@@ -83,17 +82,17 @@ a {
   color: #0094ff;
   align-items: center;
 }
-.pyg_view .right > .rigth_item > .item_list {
+.pyg_view .right .rigth_item > .item_list {
   display: flex;
   flex-wrap: wrap;
 }
-.pyg_view .right > .rigth_item > .item_list > li {
+.pyg_view .right .rigth_item > .item_list > li {
   width: 33.33%;
   text-align: center;
 }
-.pyg_view .right > .rigth_item > .item_list > li > a > img {
-  width: 100%;
+.pyg_view .right .rigth_item > .item_list > li > a > img {
+  width: 80%;
 }
-.pyg_view .right > .rigth_item > .item_list > li > a .item_name {
+.pyg_view .right .rigth_item > .item_list > li > a .item_name {
   font-size: 12px;
 }

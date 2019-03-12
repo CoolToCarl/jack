@@ -5,7 +5,7 @@
  overflow: hidden;
 
  .left {
-  overflow: scroll;
+  // overflow: scroll;
   width: 80px;
   background-color: #ccc;
 
@@ -17,7 +17,8 @@
     line-height: 40px;
     background-color: #efeff4;
    }
-   >.active{
+
+   >.active {
     border-left: 4px solid #ff008c;
     background-color: #fff;
    }
@@ -25,11 +26,13 @@
  }
 
  .right {
-  overflow: scroll;
+
+  overflow: hidden;
   flex: 1;
   background-color: #fff;
-  >.rigth_item{
-   >.item_title{
+
+  .rigth_item {
+   >.item_title {
     display: flex;
     height: 40px;
     font-size: 13px;
@@ -37,17 +40,20 @@
     color: #0094ff;
     align-items: center;
    }
-   >.item_list{
+
+   >.item_list {
     display: flex;
     flex-wrap: wrap;
-    >li{
+
+    >li {
      width: 33.33%;
      text-align: center;
-     >a{
-      >img{
-       width: 100%;
+     >a {
+      >img {
+       width: 80%;
       }
-      .item_name{
+
+      .item_name {
        font-size: 12px;
       }
      }

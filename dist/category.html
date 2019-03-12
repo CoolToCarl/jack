@@ -18,7 +18,7 @@
 </div>
 </header>
   <div class="pyg_view">
-    <div class="left">
+    <div class="left" id="wrapper">
       <ul class="left_menu">
         <!-- 模板生成 -->
       </ul>
@@ -53,8 +53,10 @@
 </html>
 
 <script type="text/html" id="leftdata">
-  {{each arr item index}}
+ <div id="#wrapper">
+    {{each arr item index}}
   <div class="rigth_item">
+    
       <div class="item_title">{{item.cat_name}}</div>
 
       <ul class="item_list">
@@ -70,11 +72,13 @@
       </ul>
     </div>
   {{/each}}
+ </div>
   </script>
 
 
 <script src="./lib/arttemplate/template-web.js"></script>
 <script src="./lib/mui/js/mui.js"></script>
 <script src="./lib/zepto/zepto.js"></script>
+<script src="./lib/iscroll/iscroll.js"></script>
 <!-- <script src="./lib/common.js"></script> -->
 <script src="./js/category.js"></script>
