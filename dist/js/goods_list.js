@@ -1,21 +1,13 @@
 "use strict";
 
 $(function () {
-  // 获取url上的参数 的值
-  function getUrl(name) {
-    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-    var r = window.location.search.substr(1).match(reg);
-    if (r != null) return decodeURI(r[2]);
-    return null;
-  } // 1 发送请求需要的参数对象 全局变量 方便修改
-
-
+  // 1 发送请求需要的参数对象 全局变量 方便修改
   var QueryObj = {
     // 查询的关键字 可以为空  根据 小米  华为 。。。。
     query: "",
     // 分类页面中的每一个小商品的分类id
     // 获取 url上的参数 cid的值
-    cid: getUrl("cid"),
+    cid: getUrl('cid'),
     // 页码
     pagenum: 1,
     // 页容量  一页可以存放几条数据
@@ -26,30 +18,86 @@ $(function () {
   init();
 
   function init() {
-    // eventList();
-    goodsSearch();
-  }
+    mui.init({
+      pullRefresh: {
+        container: ".pyg_view",
+        down: {
+          auto: true,
+          //  触发下拉刷新时自动触发
+          callback: function callback() {
+            var cb = function cb(data) {
+              var html = template("mainTpl", {
+                arr: data
+              });
+              $('.goods_list').html(html); // 结束下拉刷新
 
-  function eventList() {
-    $('.list').on("tap", "a", function () {
-      var href = this.href;
-      location.href = href;
+              mui('.pyg_view').pullRefresh().endPulldownToRefresh();
+            }; // 重置页码,变成第一页
+
+
+            QueryObj.pagenum = 1; // 重置 上拉组件
+
+            mui('.pyg_view').pullRefresh().refresh(true);
+            goodsSearch(cb);
+          }
+        },
+        up: {
+          //  触发上拉刷新时自动触发
+          callback: function callback() {
+            if (QueryObj.pagenum >= TotalPage) {
+              console.log("没有数据了");
+              mui('.pyg_view').pullRefresh().endPullupToRefresh(true);
+            } else {
+              console.log("还有数据哦");
+              QueryObj.pagenum++;
+
+              var cb = function cb(data) {
+                var html = template("mainTpl", {
+                  arr: data
+                });
+                $('.goods_list').append(html); // 结束上拉刷新
+
+                mui('.pyg_view').pullRefresh().endPullupToRefresh(false);
+              };
+
+              goodsSearch(cb);
+            }
+          }
+        }
+      }
     });
-  } // 获取商品列表页的数据
+  } // function eventList() {
+  //  $('.list').on("tap", "a", function () {
+  //   let href = this.href;
+  //   location.href = href;
+  //  })
+  // }
+  // 获取商品列表页的数据
 
 
-  function goodsSearch() {
+  function goodsSearch(func) {
     // console.log(123);
     $.get("http://api.pyg.ak48.xyz/api/public/v1/goods/search", QueryObj, function (result) {
       if (result.meta.status == 200) {
         console.log(result);
-        var html = template('mainTpl', {
-          arr: result.data.goods
-        }); // console.log(html);
+        var data = result.data.goods; // 计算总条数
 
-        $('.goods_list').html(html);
+        TotalPage = Math.ceil(result.data.total / QueryObj.pagesize);
+        console.log(TotalPage);
+        func(data); // var html = template("mainTpl", {arr: data});
+        // $('.goods_list').html(html);
+        // // 结束下拉刷新
+        // mui('.pyg_view').pullRefresh().endPulldownToRefresh();
       }
     });
+  } // 获取url上的参数 的值
+
+
+  function getUrl(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return decodeURI(r[2]);
+    return null;
   }
 });
 //# sourceMappingURL=goods_list.js.map

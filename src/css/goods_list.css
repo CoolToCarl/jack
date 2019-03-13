@@ -71,38 +71,41 @@ a {
   transform: translateY(-50%);
   font-size: 20px;
 }
-.goods_list > li {
+.pyg_view {
+  position: relative;
+}
+.pyg_view .goods_list > li {
   border-bottom: 1px solid #ccc;
 }
-.goods_list > li a {
+.pyg_view .goods_list > li a {
   display: flex;
   flex-direction: row;
   background-color: #fff;
   padding: 10px;
   cursor: pointer;
 }
-.goods_list > li a .goods_img {
+.pyg_view .goods_list > li a .goods_img {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.goods_list > li a .goods_img img {
+.pyg_view .goods_list > li a .goods_img img {
   width: 70%;
 }
-.goods_list > li a .goods_introduce {
+.pyg_view .goods_list > li a .goods_introduce {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   overflow: hidden;
 }
-.goods_list > li a .goods_introduce .goods_name {
+.pyg_view .goods_list > li a .goods_introduce .goods_name {
   font-size: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.goods_list > li a .goods_introduce .goods_price {
+.pyg_view .goods_list > li a .goods_introduce .goods_price {
   color: red;
 }

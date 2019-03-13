@@ -76,10 +76,13 @@ a {
           transform: translateY(-50%);
   font-size: 20px;
 }
-.goods_list > li {
+.pyg_view {
+  position: relative;
+}
+.pyg_view .goods_list > li {
   border-bottom: 1px solid #ccc;
 }
-.goods_list > li a {
+.pyg_view .goods_list > li a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,7 +94,7 @@ a {
   padding: 10px;
   cursor: pointer;
 }
-.goods_list > li a .goods_img {
+.pyg_view .goods_list > li a .goods_img {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -105,10 +108,10 @@ a {
       -ms-flex-align: center;
           align-items: center;
 }
-.goods_list > li a .goods_img img {
+.pyg_view .goods_list > li a .goods_img img {
   width: 70%;
 }
-.goods_list > li a .goods_introduce {
+.pyg_view .goods_list > li a .goods_introduce {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -123,13 +126,13 @@ a {
       justify-content: space-around;
   overflow: hidden;
 }
-.goods_list > li a .goods_introduce .goods_name {
+.pyg_view .goods_list > li a .goods_introduce .goods_name {
   font-size: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.goods_list > li a .goods_introduce .goods_price {
+.pyg_view .goods_list > li a .goods_introduce .goods_price {
   color: red;
 }
 

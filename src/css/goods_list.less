@@ -25,46 +25,48 @@
 
  }
 }
-
-.goods_list {
- >li {
-  border-bottom: 1px solid #ccc;
-
-  a {
-   display: flex;
-   flex-direction: row;
-   background-color: #fff;
-   padding: 10px;
-   cursor: pointer;
-   .goods_img {
-    flex: 1;
+.pyg_view{
+ position: relative;
+ .goods_list {
+  >li {
+   border-bottom: 1px solid #ccc;
+ 
+   a {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    img {
-     width: 70%;
+    flex-direction: row;
+    background-color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    .goods_img {
+     flex: 1;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     img {
+      width: 70%;
+     }
     }
-   }
-   .goods_introduce {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    overflow: hidden;
-    .goods_name {
-     font-size: 14px;
+    .goods_introduce {
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;
      overflow: hidden;
-     text-overflow: ellipsis;
-     white-space: nowrap;
-
+     .goods_name {
+      font-size: 14px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+ 
+     }
+ 
+     .goods_price {
+ 
+     color: red;
+ 
+     }
+ 
     }
-
-    .goods_price {
-
-    color: red;
-
-    }
-
    }
   }
  }
