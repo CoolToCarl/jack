@@ -105,10 +105,15 @@ a {
   width: 33.33%;
   text-align: center;
 }
+.pyg_view .right .rigth_item > .item_list > li > a {
+  display: block;
+}
 .pyg_view .right .rigth_item > .item_list > li > a > img {
+  display: block;
   width: 80%;
 }
 .pyg_view .right .rigth_item > .item_list > li > a .item_name {
+  text-align: center;
   font-size: 12px;
 }
 

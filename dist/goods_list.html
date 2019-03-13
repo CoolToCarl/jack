@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Document</title>
+ <link rel="stylesheet" href="./lib/mui/css/mui.css">
+ <link rel="stylesheet" href="./lib/fontawesome/css/font-awesome.css">
+ <link rel="stylesheet" href="./css/base.css">
+ <link rel="stylesheet" href="./css/goods_list.css">
+</head>
+
+<body>
+ <div class="header">
+  <span class="header_title">搜索</span>
+  <i class="fa fa-search"></i>
+ </div>
+ <div class="pyg_view">
+
+
+  <ul class="goods_list">
+   <!-- 动态渲染数据 -->
+  </ul>
+
+
+ </div>
+ <footer class="pyg_footer">
+ <a href="/">
+  <i class="fa fa-home"></i>
+
+  <div>首页</div>
+
+ </a>
+
+ <a href="./category.html">
+  <i class="fa fa-list-ul"></i>
+  <div>分类</div>
+ </a>
+ <a href="javascript:;">
+  <i class="fa fa-shopping-cart"></i>
+  <div>购物车</div>
+ </a>
+ <a href="javascript:;">
+  <i class="fa fa-user-circle-o"></i>
+  <div>我的</div>
+ </a>
+</footer>
+</body>
+
+</html>
+
+<script type="text/html" id="mainTpl">
+ {{each arr value index}}
+ <li>
+   <a href="javascript:;">
+    <div class="goods_img">
+     <img src="{{value.goods_big_logo}}" alt="">
+    </div>
+    <div class="goods_introduce">
+     <div class="goods_name">{{value.goods_name}}</div>
+     <div class="goods_price">¥{{value.goods_price}}</div>
+    </div>
+   </a>
+  </li>
+
+ {{/each}}
+</script>
+
+<script src="./lib/arttemplate/template-web.js"></script>
+<script src="./lib/mui/js/mui.js"></script>
+<script src="./lib/zepto/zepto.js"></script>
+<!-- <script src="./lib/common.js"></script> -->
+<script src="./js/goods_list.js"></script>

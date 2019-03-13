@@ -25,6 +25,8 @@ function swiperdata() {
     type: "get",
     success: function success(result) {
       //  判断请求是否成功
+      console.log(result);
+
       if (result.meta.status === 200) {
         // 获取要渲染的数据 data=[]
         var data = result.data; // 生成要渲染的html标签
@@ -46,6 +48,8 @@ function swiperdata() {
 
 function catitems() {
   $.get("http://api.pyg.ak48.xyz/api/public/v1/home/catitems", function (result) {
+    console.log(result);
+
     if (result.meta.status == 200) {
       var data = result.data;
       var html = "";
@@ -67,6 +71,8 @@ function catitems() {
 
 function goodslist() {
   $.get("http://api.pyg.ak48.xyz/api/public/v1/home/goodslist", function (result) {
+    console.log(result);
+
     if (result.meta.status == 200) {
       // console.log(result);
       var data = result.data; //  console.log( data[0].group_img);

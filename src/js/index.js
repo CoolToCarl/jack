@@ -22,6 +22,8 @@ function swiperdata() {
     type: "get",
     success: function (result) {
       //  判断请求是否成功
+      console.log(result);
+      
       if (result.meta.status === 200) {
         // 获取要渲染的数据 data=[]
         let data = result.data;
@@ -44,6 +46,7 @@ function swiperdata() {
 function catitems() {
 
   $.get("http://api.pyg.ak48.xyz/api/public/v1/home/catitems", (result) => {
+console.log(result);
 
     if (result.meta.status == 200) {
 
@@ -71,6 +74,7 @@ function catitems() {
 
 function goodslist() {
   $.get("http://api.pyg.ak48.xyz/api/public/v1/home/goodslist", (result) => {
+console.log(result);
 
     if (result.meta.status == 200) {
       // console.log(result);

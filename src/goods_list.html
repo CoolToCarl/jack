@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Document</title>
+ <link rel="stylesheet" href="./lib/mui/css/mui.css">
+ <link rel="stylesheet" href="./lib/fontawesome/css/font-awesome.css">
+ <link rel="stylesheet" href="./css/base.css">
+ <link rel="stylesheet" href="./css/goods_list.css">
+</head>
+
+<body>
+ <div class="header">
+  <span class="header_title">搜索</span>
+  <i class="fa fa-search"></i>
+ </div>
+ <div class="pyg_view">
+
+
+  <ul class="goods_list">
+   <!-- 动态渲染数据 -->
+  </ul>
+
+
+ </div>
+ @@include("footer.html")
+</body>
+
+</html>
+
+<script type="text/html" id="mainTpl">
+ {{each arr value index}}
+ <li>
+   <a href="javascript:;">
+    <div class="goods_img">
+     <img src="{{value.goods_big_logo}}" alt="">
+    </div>
+    <div class="goods_introduce">
+     <div class="goods_name">{{value.goods_name}}</div>
+     <div class="goods_price">¥{{value.goods_price}}</div>
+    </div>
+   </a>
+  </li>
+
+ {{/each}}
+</script>
+
+<script src="./lib/arttemplate/template-web.js"></script>
+<script src="./lib/mui/js/mui.js"></script>
+<script src="./lib/zepto/zepto.js"></script>
+<!-- <script src="./lib/common.js"></script> -->
+<script src="./js/goods_list.js"></script>

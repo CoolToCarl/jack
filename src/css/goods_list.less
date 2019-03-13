@@ -1,0 +1,71 @@
+@import './commot.less';
+
+.header {
+ background-color: #d63fca;
+ position: fixed;
+ top: 0px;
+ left: 0px;
+ height: 45px;
+ width: 100%;
+ color: #fff;
+
+ .header_title {
+  text-align: center;
+  line-height: 45px;
+  display: block;
+
+ }
+
+ i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+
+ }
+}
+
+.goods_list {
+ >li {
+  border-bottom: 1px solid #ccc;
+
+  a {
+   display: flex;
+   flex-direction: row;
+   background-color: #fff;
+   padding: 10px;
+   cursor: pointer;
+   .goods_img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+     width: 70%;
+    }
+   }
+   .goods_introduce {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: hidden;
+    .goods_name {
+     font-size: 14px;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     white-space: nowrap;
+
+    }
+
+    .goods_price {
+
+    color: red;
+
+    }
+
+   }
+  }
+ }
+}
